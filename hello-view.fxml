@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.HelloController">
+
+    <top>
+        <VBox spacing="10">
+            <padding><Insets top="20" right="20" bottom="10" left="20"/></padding>
+            <Label fx:id="welcomeLabel" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+            <Label fx:id="userInfoLabel" style="-fx-text-fill: #666;" />
+            <Separator />
+        </VBox>
+    </top>
+
+    <left>
+        <VBox spacing="10" prefWidth="200">
+            <padding><Insets top="10" right="10" bottom="10" left="20"/></padding>
+            <Label text="Категории:" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+            <ListView fx:id="categoriesList" prefHeight="200" />
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="10">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <Label text="Товары:" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+            <ListView fx:id="productsList" VBox.vgrow="ALWAYS" prefHeight="300" />
+            <VBox fx:id="productDetails" spacing="10" />
+        </VBox>
+    </center>
+
+    <right>
+        <VBox spacing="10" prefWidth="350">
+            <padding><Insets top="10" right="20" bottom="10" left="10"/></padding>
+            <Label text="Корзина:" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+            <ListView fx:id="cartList" prefHeight="250" />
+            <Label fx:id="totalLabel" text="Итого: 0 ₽" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2196F3;" />
+            <HBox spacing="10">
+                <Button fx:id="orderButton" text="Оформить" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" HBox.hgrow="ALWAYS" />
+                <Button fx:id="removeButton" text="Удалить" style="-fx-background-color: #f44336; -fx-text-fill: white;" HBox.hgrow="ALWAYS" />
+            </HBox>
+            <TextArea fx:id="infoArea" editable="false" prefHeight="80" promptText="Информация..." />
+            <Button text="Выйти" onAction="#handleLogout" style="-fx-background-color: #9E9E9E; -fx-text-fill: white;" />
+        </VBox>
+    </right>
+</BorderPane>

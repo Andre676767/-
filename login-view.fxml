@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15" alignment="CENTER" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.LoginController">
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <Label text="Мебельный магазин" style="-fx-font-size: 26px; -fx-font-weight: bold;">
+        <font><Font size="26"/></font>
+    </Label>
+
+    <Label text="Добро пожаловать! У нас большой выбор качественной мебели." wrapText="true" textAlignment="CENTER" />
+
+    <Button text="ПЕРЕЙТИ В КАТАЛОГ" onAction="#handleGuestAccess" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-size: 14px;" prefWidth="250" />
+
+    <Separator />
+
+    <Label text="Или войдите в аккаунт:" />
+
+    <TabPane fx:id="tabPane">
+        <Tab text="Вход">
+            <VBox spacing="15" alignment="CENTER">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                <TextField fx:id="loginUsername" promptText="Имя пользователя" prefWidth="300" />
+                <PasswordField fx:id="loginPassword" promptText="Пароль" prefWidth="300" />
+                <Button text="Войти" onAction="#handleLogin" style="-fx-background-color: #2196F3; -fx-text-fill: white;" prefWidth="200" />
+            </VBox>
+        </Tab>
+
+        <Tab text="Регистрация">
+            <VBox spacing="15" alignment="CENTER">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                <TextField fx:id="regUsername" promptText="Имя пользователя (мин. 3)" prefWidth="300" />
+                <PasswordField fx:id="regPassword" promptText="Пароль (мин. 4)" prefWidth="300" />
+                <TextField fx:id="regEmail" promptText="Email" prefWidth="300" />
+                <Button text="Зарегистрироваться" onAction="#handleRegister" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" prefWidth="200" />
+            </VBox>
+        </Tab>
+    </TabPane>
+
+    <Label fx:id="messageLabel" wrapText="true" />
+</VBox>
